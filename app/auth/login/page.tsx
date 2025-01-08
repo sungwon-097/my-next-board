@@ -5,6 +5,7 @@ import '../_style.css';
 import { setCredentials } from '@/lib/localstorage';
 import { useRouter } from 'next/navigation';
 import { PATH } from '@/lib/path';
+import HomeButton from '@/components/homeButton';
 
 export default Login;
 
@@ -54,6 +55,7 @@ function Login() {
       />
       <button type="submit">Login</button>
       {error && <p>{error}</p>}
+      <HomeButton />
     </form>
   );
 }

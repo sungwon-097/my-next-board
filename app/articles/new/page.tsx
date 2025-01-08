@@ -6,6 +6,7 @@ import { getCredentials } from '@/lib/localstorage';
 import { useRouter } from 'next/navigation';
 import { Header } from '@/components/header';
 import './_style.css';
+import HomeButton from '@/components/homeButton';
 
 export default NewPost;
 
@@ -28,7 +29,7 @@ function NewPost() {
         },
         body: JSON.stringify(form),
       });
-      return router.replace(PATH.ARTICLES);
+      return router.replace(PATH.ARTICLES_ALL);
     } catch (e) {
       console.log(e);
       alert(e);
@@ -71,6 +72,7 @@ function NewPost() {
           Submit
         </button>
       </form>
+      <HomeButton />
     </div>
   );
 }

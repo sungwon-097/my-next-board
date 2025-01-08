@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import '../_style.css';
 import { PATH } from '@/lib/path';
+import HomeButton from '@/components/homeButton';
 
 export default Register;
 
@@ -67,6 +68,7 @@ function Register() {
       />
       <button type="submit">Register</button>
       {error && <p>{error}</p>}
+      <HomeButton />
     </form>
   );
 }

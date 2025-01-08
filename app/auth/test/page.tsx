@@ -5,6 +5,7 @@ import '../_style.css';
 import { clearCredentials, getCredentials } from '@/lib/localstorage';
 import { useRouter } from 'next/navigation';
 import { PATH } from '@/lib/path';
+import HomeButton from '@/components/homeButton';
 
 export default Test;
 
@@ -33,9 +34,10 @@ function Test() {
     <div>
       <div onClick={handler}>{contextResult()}</div>
       <button onClick={clearCredentials}>logout</button>
-      <button onClick={() => router.replace(PATH.ARTICLES)}>
+      <button onClick={() => router.replace(PATH.ARTICLES_ALL)}>
         move to contents
       </button>
+      <HomeButton />
     </div>
   );
 }
