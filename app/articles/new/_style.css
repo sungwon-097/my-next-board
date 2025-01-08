@@ -1,0 +1,39 @@
+.create-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container {
+    margin-top: 5rem;
+    padding: 1rem;
+}
+
+.create-element {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+}
+
+.create-element span {
+    width: 100px;
+}
+
+.create-element input {
+    width: 100%;
+    height: 3rem;
+    border: 1px solid gray;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+}
+
+button {
+    padding: 0.5rem;
+    color: white;
+    background: #19173D;
+    width: 100%;
+    --color-background-hover: white;
+}
