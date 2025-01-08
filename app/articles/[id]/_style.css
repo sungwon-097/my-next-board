@@ -1,0 +1,31 @@
+.single-article-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+.content-element {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-element span:first-child {
+    font-size: 1.2rem;
+}
+
+.content-element span:nth-child(2) {
+    font-size: 0.8rem;
+}
+
+.content-box {
+    height: 20rem;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 1rem;
+}

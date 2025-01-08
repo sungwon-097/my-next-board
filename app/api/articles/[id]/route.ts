@@ -19,7 +19,7 @@ async function GetArticle({
   return CommonResponse(200, findArticleById(id));
 }
 
-export function findArticleById(id: number){
+export function findArticleById(id: number) {
   return prisma.post.findUnique({
     where: { id },
   });
