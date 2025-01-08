@@ -10,14 +10,14 @@ const refreshSecret = process.env.REFRESH_SECRET as string;
 export const generateAccess = (id: number) => {
   return jwt.sign({ id: id }, accessSecret, {
     algorithm: 'HS256',
-    expiresIn: '1h',
+    expiresIn: '9h',
   });
 };
 
 export const generateRefresh = (id: number) => {
   return jwt.sign({ id: id }, refreshSecret, {
     algorithm: 'HS256',
-    expiresIn: '10h',
+    expiresIn: '7d',
   });
 };
 
