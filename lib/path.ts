@@ -9,10 +9,11 @@ export enum PATH {
   API_ARTICLES_MY = '/api/articles/my',
 
   // CLIENT
-  SIGNIN = '/auth/signin',
-  SIGNUP = '/auth/signup',
+  SIGNIN = '/auth/login',
+  SIGNUP = '/auth/register',
   TEST = '/auth/test',
-  ARTICLES = '/articles/lobby',
+  ARTICLES = '/articles',
+  ARTICLES_ALL = '/articles/lobby',
   ARTICLES_NEW = '/articles/new',
   ARTICLES_ALERT = '/articles/alert',
   ARTICLES_MY = '/articles/mypage',
