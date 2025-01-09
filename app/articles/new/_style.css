@@ -25,12 +25,12 @@
     border: 1px solid gray;
 }
 
-h1 {
+.form-container h1 {
     font-size: 1.5rem;
     margin: 2rem 0;
 }
 
-button {
+.form-container button {
     padding: 0.5rem;
     color: white;
     background: #19173D;

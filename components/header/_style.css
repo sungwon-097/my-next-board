@@ -6,7 +6,7 @@
     background-color: #19173D;
 }
 
-p {
+.header-container p {
     display: flex;
     flex-direction: row;
     justify-content: center;
