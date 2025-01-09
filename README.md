@@ -70,3 +70,7 @@ npx tailwindcss init
 2. Add New Configuration(Nodejs)
 3. JavaScript file : node_modules/next/dist/bin/next
 4. Application parameters : dev
+
+### 4. Preview
+
+[document](/public/preview)
