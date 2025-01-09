@@ -1,16 +1,16 @@
 'use client';
 
 import './_style.css';
-import { Article } from '@/app/articles/lobby/page';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { PATH } from '@/lib/path';
+import { Article } from '@/app/api/dto/models/models';
 
 export default ArticleContents;
 
 function ArticleContents({ articles }: { articles: Article[] }) {
   const router = useRouter();
-  const preview = require('../../../public/vercel.svg');
+  const preview = require('../../../public/next.svg');
 
   const handleClickContent = (id: number) => {
     router.replace(PATH.ARTICLES + '/' + id);
