@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import '../_style.css';
 import { PATH } from '@/lib/path';
-import HomeButton from '@/components/homeButton';
 
 export default Register;
 
@@ -27,9 +26,9 @@ function Register() {
       });
 
       if (!res.ok) {
-          const error = await res.json();
-          alert(error.data.message);
-          return
+        const error = await res.json();
+        alert(error.data.message);
+        return;
       }
 
       return router.push(PATH.SIGNIN);
@@ -66,7 +65,6 @@ function Register() {
         onChange={handleChange}
       />
       <button type="submit">Register</button>
-      <HomeButton />
     </form>
   );
 }

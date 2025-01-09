@@ -1,19 +1,17 @@
 .test-container {
-    margin-top: 20rem;
-}
-
-button:first-child {
-    background: #007bff;
-}
-
-button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.test-container button:first-child {
+    background: #007bff;
+    margin-top: 20rem;
+}
+
+.test-container button {
     padding: 0.5rem;
     color: white;
     background: #19173D;
-    width: 80%;
     --color-background-hover: white;
-    margin: auto;
 }

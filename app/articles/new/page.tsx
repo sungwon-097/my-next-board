@@ -4,9 +4,7 @@ import React, { useState } from 'react';
 import { PATH } from '@/lib/path';
 import { getCredentials } from '@/lib/localstorage';
 import { useRouter } from 'next/navigation';
-import { Header } from '@/components/header';
 import './_style.css';
-import HomeButton from '@/components/homeButton';
 
 export default NewPost;
 
@@ -38,7 +36,6 @@ function NewPost() {
 
   return (
     <div className="create-container">
-      <Header />
       <form className="form-container" onSubmit={handleSubmit}>
         <h1>New Post</h1>
         <div className="create-element">
@@ -63,7 +60,6 @@ function NewPost() {
           Submit
         </button>
       </form>
-      <HomeButton />
     </div>
   );
 }

@@ -5,7 +5,6 @@ import '../_style.css';
 import { setCredentials } from '@/lib/localstorage';
 import { useRouter } from 'next/navigation';
 import { PATH } from '@/lib/path';
-import HomeButton from '@/components/homeButton';
 
 export default Login;
 
@@ -27,9 +26,9 @@ function Login() {
       });
 
       if (!res.ok) {
-          const error = await res.json();
-          alert(error.data.message);
-          return
+        const error = await res.json();
+        alert(error.data.message);
+        return;
       }
 
       setCredentials(await res.json());
@@ -59,7 +58,6 @@ function Login() {
         onChange={handleChange}
       />
       <button type="submit">Login</button>
-      <HomeButton />
     </form>
   );
 }

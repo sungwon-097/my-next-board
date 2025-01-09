@@ -4,8 +4,7 @@ import React, { useState } from 'react';
 import { clearCredentials, getCredentials } from '@/lib/localstorage';
 import { useRouter } from 'next/navigation';
 import { PATH } from '@/lib/path';
-import HomeButton from '@/components/homeButton';
-import './_style.css'
+import './_style.css';
 
 export default Test;
 
@@ -31,13 +30,12 @@ function Test() {
   };
 
   return (
-    <div className='test-container'>
+    <div className="test-container">
       <button onClick={handler}>{contextResult()}</button>
       <button onClick={clearCredentials}>logout</button>
       <button onClick={() => router.replace(PATH.ARTICLES_ALL)}>
         move to contents
       </button>
-      <HomeButton />
     </div>
   );
 }

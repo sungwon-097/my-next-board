@@ -3,18 +3,21 @@
     justify-content: center;
     width: 100%;
     grid-template-columns: 20% 60%;
-    margin-top: 50%;
+
 }
 
 .title {
     font-size: large;
-    margin: 30px 0;
+    margin-top: 20rem;
     grid-column: span 2;
 }
 
 .container button {
     margin: 2rem 0.5rem;
     grid-column: span 2;
+    background: #19173D;
+    color: white;
+    height: 2rem;
 }
 
 .container span {

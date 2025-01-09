@@ -1,17 +1,14 @@
 'use client';
 
-import { Header } from '@/components/header';
 import ArticleContents from '@/components/contents/articles';
 import './_style.css';
 import { PATH } from '@/lib/path';
 import { getCredentials } from '@/lib/localstorage';
 import { useEffect, useState } from 'react';
 import { CommonResponse } from '@/app/api/dto/response';
-import HomeButton from '@/components/homeButton';
 import { Article } from '@/app/api/dto/models/models';
 
 export default ArticlesLobby;
-
 function ArticlesLobby() {
   const [articles, setArticles] = useState<Article[]>([]);
 
@@ -32,9 +29,7 @@ function ArticlesLobby() {
 
   return (
     <div className="lobby-container">
-      <Header />
       <ArticleContents articles={articles} />
-      <HomeButton />
     </div>
   );
 }
