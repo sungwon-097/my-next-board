@@ -5,13 +5,13 @@ import { findArticleById } from '@/app/api/articles/[id]/route';
 import React from 'react';
 import './_style.css';
 import HomeButton from '@/components/homeButton';
+import CommentSection from '@/components/contents/comments';
 
 export default RetrieveSingleArticle;
 
 async function RetrieveSingleArticle({ params }: { params: { id: number } }) {
   const { id } = await params;
   const article = await findArticleById(Number(id));
-  // console.log(article);
 
   return (
     <div className="single-article-container">
@@ -28,6 +28,14 @@ async function RetrieveSingleArticle({ params }: { params: { id: number } }) {
         <div className="content-element">
           <span>Content</span>
           <span className="content-box">{article?.content}</span>
+        </div>
+        <div className="content-element">
+          {article?.content && (
+            <CommentSection
+              articleId={article.id}
+              comments={article.comments}
+            />
+          )}
         </div>
       </div>
       <HomeButton />

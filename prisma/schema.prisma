@@ -19,6 +19,7 @@ model User {
   email     String   @unique
   password  String
   posts     Post[] @relation("UserPosts")
+  comments  Comment[] @relation("UserComments")
 }
 
 model Post {
@@ -27,6 +28,17 @@ model Post {
   content   String
   createdAt DateTime @default(now())
   user      User     @relation(fields: [userId], references: [id], name: "UserPosts")
+  userId    Int
+  comments  Comment[] @relation("PostComments")
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  content   String
+  createdAt DateTime @default(now())
+  post      Post    @relation(fields: [postId], references: [id], name: "PostComments")
+  postId    Int
+  user      User    @relation(fields: [userId], references: [id], name: "UserComments")
   userId    Int
 }
 

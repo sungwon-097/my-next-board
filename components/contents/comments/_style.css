@@ -1,0 +1,39 @@
+.comment-container {
+
+}
+
+.comment-container input {
+    width: 70%;
+    height: 2rem;
+    border: 1px solid black;
+}
+
+.comment-container button {
+    width: 30%;
+    background: #19173D;
+    color: white;
+    padding: 0.3rem;
+}
+
+.user-comment-element {
+    border: 0.3px solid gray;
+    border-collapse: collapse;
+    margin: 0.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-comment-element div:first-child {
+
+}
+
+.user-comment-element div:nth-child(2) {
+    font-size: 0.8rem;
+}
+
+.user-comment-element div:nth-child(3) {
+    display: flex;
+    justify-content: right;
+    float: right;
+    font-size: 0.8rem;
+}

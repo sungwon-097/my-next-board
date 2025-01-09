@@ -22,5 +22,12 @@ async function GetArticle({
 export function findArticleById(id: number) {
   return prisma.post.findUnique({
     where: { id },
+    include: {
+      comments: {
+        include: {
+          user: true,
+        },
+      },
+    },
   });
 }

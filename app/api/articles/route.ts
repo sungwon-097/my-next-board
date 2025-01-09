@@ -12,7 +12,11 @@ async function GetArticle({
   req: NextRequest;
   userId: number;
 }) {
-  const articles = await prisma.post.findMany();
+  const articles = await prisma.post.findMany({
+    include: {
+      user: true,
+    },
+  });
 
   return CommonResponse(200, articles);
 }

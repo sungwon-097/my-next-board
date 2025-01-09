@@ -7,6 +7,7 @@ export enum PATH {
   API_ARTICLES_NEW = '/api/articles/new',
   API_ARTICLES_ALERT = '/api/articles/alert',
   API_ARTICLES_MY = '/api/articles/my',
+  API_COMMENTS = '/api/comments',
 
   // CLIENT
   SIGNIN = '/auth/login',
