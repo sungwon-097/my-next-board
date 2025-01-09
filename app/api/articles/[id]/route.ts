@@ -28,6 +28,7 @@ export function findArticleById(id: number) {
           user: true,
         },
       },
+      user: true
     },
   });
 }

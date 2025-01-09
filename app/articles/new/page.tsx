@@ -40,22 +40,13 @@ function NewPost() {
     <div className="create-container">
       <Header />
       <form className="form-container" onSubmit={handleSubmit}>
-        <h1>New Article</h1>
+        <h1>New Post</h1>
         <div className="create-element">
           <span>Title</span>
           <input
             type="text"
             name="title"
             placeholder="Title"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="create-element">
-          <span>Tag</span>
-          <input
-            type="text"
-            name="tag"
-            placeholder="Tag"
             onChange={handleChange}
           />
         </div>

@@ -21,10 +21,10 @@ async function RetrieveSingleArticle({ params }: { params: { id: number } }) {
           <span>Title</span>
           <span>{article?.title}</span>
         </div>
-        <div className="content-element">
-          <span>Tag</span>
-          <span>tags...</span>
-        </div>
+          <div className="content-element">
+              <span>Author</span>
+              <span>{article?.user.name}</span>
+          </div>
         <div className="content-element">
           <span>Content</span>
           <span className="content-box">{article?.content}</span>
