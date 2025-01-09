@@ -12,14 +12,12 @@ export default Login;
 function Login() {
   const router = useRouter();
   const [form, setForm] = useState({ email: '', password: '' });
-  const [error, setError] = useState('');
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
 
     try {
       const res = await fetch(PATH.API_SIGNIN, {
@@ -27,10 +25,17 @@ function Login() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
+
+      if (!res.ok) {
+          const error = await res.json();
+          alert(error.data.message);
+          return
+      }
+
       setCredentials(await res.json());
       return router.replace(PATH.TEST);
     } catch (e) {
-      console.log(e);
+      alert(e);
     }
   };
 
@@ -54,7 +59,6 @@ function Login() {
         onChange={handleChange}
       />
       <button type="submit">Login</button>
-      {error && <p>{error}</p>}
       <HomeButton />
     </form>
   );

@@ -10,7 +10,6 @@ export default Register;
 
 function Register() {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
-  const [error, setError] = useState('');
   const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,7 +18,6 @@ function Register() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
 
     try {
       const res = await fetch(PATH.API_SIGNUP, {
@@ -29,13 +27,14 @@ function Register() {
       });
 
       if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || 'Fail to Page');
+          const error = await res.json();
+          alert(error.data.message);
+          return
       }
 
       return router.push(PATH.SIGNIN);
     } catch (e: any) {
-      setError(e.message);
+      alert(e.message);
     }
   };
 
@@ -67,7 +66,6 @@ function Register() {
         onChange={handleChange}
       />
       <button type="submit">Register</button>
-      {error && <p>{error}</p>}
       <HomeButton />
     </form>
   );
