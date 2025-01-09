@@ -9,7 +9,7 @@
 }
 
 .comment-container button {
-    width: 30%;
+    width: 29%;
     background: #19173D;
     color: white;
     padding: 0.3rem;
@@ -18,17 +18,21 @@
 .user-comment-element {
     border: 0.3px solid gray;
     border-collapse: collapse;
-    margin: 0.2rem;
+    border-radius: 20px;
+    padding: 1rem;
+    margin: 0.5rem 0;
     display: flex;
     flex-direction: column;
 }
 
 .user-comment-element div:first-child {
-
+    font-size: 0.8rem;
 }
 
 .user-comment-element div:nth-child(2) {
     font-size: 0.8rem;
+    color: #19173D;
+    font: bold;
 }
 
 .user-comment-element div:nth-child(3) {

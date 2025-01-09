@@ -12,16 +12,16 @@
     grid-column: span 2;
 }
 
-button {
+.container button {
     margin: 2rem 0.5rem;
     grid-column: span 2;
 }
 
-span {
+.container span {
     margin: 0.5rem 0;
 }
 
-input {
+.container input {
     margin: 0.5rem 0;
     height: fit-content;
     vertical-align: middle;

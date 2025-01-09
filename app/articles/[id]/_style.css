@@ -10,7 +10,7 @@
 }
 
 .content-element {
-    margin: 2rem;
+    margin: 1rem 2rem;
     display: flex;
     flex-direction: column;
 }
@@ -24,7 +24,7 @@
 }
 
 .content-box {
-    height: 20rem;
+    min-height: 5rem;
     border: 1px solid gray;
     border-radius: 20px;
     padding: 1rem;

@@ -63,7 +63,9 @@ npx tailwindcss init
 ```
 
 ### 3. Debugging
+
 - On CLion
+
 1. Edit Configurations
 2. Add New Configuration(Nodejs)
 3. JavaScript file : node_modules/next/dist/bin/next

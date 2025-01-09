@@ -16,6 +16,11 @@ function ArticleContents({ articles }: { articles: Article[] }) {
     router.replace(PATH.ARTICLES + '/' + id);
   };
 
+  const toPreviewText = (text:string, max: number) => {
+      return text.substring(0, max) + ((text.length>max)?'...':'');
+  }
+
+
   return (
     <div className="article-container">
       {articles.length > 0 &&
@@ -32,8 +37,8 @@ function ArticleContents({ articles }: { articles: Article[] }) {
                 alt="previewImage"
               />
               <div className="article-contents">
-                <span>{value.title + (index + 1)}</span>
-                <span>{value.content}</span>
+                <span>{toPreviewText(value.title,20)}</span>
+                <span>{toPreviewText(value.content, 100)}</span>
                 <span>{new Date(value.createdAt).toLocaleDateString()}</span>
               </div>
             </div>
