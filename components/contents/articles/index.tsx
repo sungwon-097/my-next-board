@@ -37,7 +37,7 @@ function ArticleContents({ articles }: { articles: Article[] }) {
                 alt="previewImage"
               />
               <div className="article-contents">
-                <span>{toPreviewText(value.title,20)}</span>
+                <span>{toPreviewText(value.title,20)}<p>author: {value.user?.name}</p></span>
                 <span>{toPreviewText(value.content, 100)}</span>
                 <span>{new Date(value.createdAt).toLocaleDateString()}</span>
               </div>

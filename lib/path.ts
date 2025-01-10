@@ -2,6 +2,7 @@ export enum PATH {
   // SERVER
   API_SIGNIN = '/api/auth/signin',
   API_SIGNUP = '/api/auth/signup',
+  API_SIGNOUT = '/api/auth/signout',
   API_TEST = '/api/auth/test',
   API_ARTICLES = '/api/articles',
   API_ARTICLES_NEW = '/api/articles/new',
@@ -17,5 +18,6 @@ export enum PATH {
   ARTICLES_ALL = '/articles/lobby',
   ARTICLES_NEW = '/articles/new',
   ARTICLES_ALERT = '/articles/alert',
-  ARTICLES_MY = '/articles/mypage',
+  ARTICLES_MY = '/articles/mypost',
+  ARTICLES_MYPAGE = '/articles/mypage',
 }

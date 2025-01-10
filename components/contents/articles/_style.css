@@ -30,6 +30,11 @@
     font-size: 1.1rem;
 }
 
+.article-contents span:first-child p{
+    font-size: 0.8rem;
+    color: gray;
+}
+
 .article-contents span:nth-child(2) {
     font-size: 0.8rem;
     color: navy;

@@ -10,8 +10,8 @@ export function Header() {
     <div className="header-container">
       <p onClick={() => router.replace(PATH.ARTICLES_ALL)}>All</p>
       <p onClick={() => router.replace(PATH.ARTICLES_NEW)}>New Post</p>
-      <p onClick={() => router.replace(PATH.ARTICLES_ALERT)}>Alert</p>
-      <p onClick={() => router.replace(PATH.ARTICLES_MY)}>MyPage</p>
+      <p onClick={() => router.replace(PATH.ARTICLES_MY)}>My Post</p>
+      <p onClick={() => router.replace(PATH.ARTICLES_MYPAGE)}>MyPage</p>
     </div>
   );
 }

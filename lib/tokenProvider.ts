@@ -1,4 +1,5 @@
 import jwt, { JwtPayload } from 'jsonwebtoken';
+import {jwtVerify} from "jose";
 
 const accessSecret = process.env.ACCESS_SECRET as string;
 const refreshSecret = process.env.REFRESH_SECRET as string;
@@ -27,9 +28,18 @@ export const generateRefresh = (id: number) => {
  */
 export const verify = (token: string) => {
   try {
-    const decoded = jwt.verify(token, accessSecret) as JwtPayload;
-    return decoded.id;
+    const secretKey = new TextEncoder().encode(accessSecret)
+    jwtVerify(token, secretKey)
   } catch (e) {
     throw new Error('Fail to verification');
   }
 };
+
+export const getAuth = (token:string) => {
+  try {
+    const decoded = jwt.verify(token, accessSecret) as JwtPayload
+    return decoded.id
+  } catch (e) {
+    throw new Error('Fail to verification');
+  }
+}

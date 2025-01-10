@@ -1,4 +1,4 @@
-import { NextRequest } from 'next/server';
+import {NextRequest, NextResponse} from 'next/server';
 import prisma from '@/lib/prisma';
 import { generateAccess, generateRefresh } from '@/lib/tokenProvider';
 import { CommonResponse } from '@/app/api/dto/response';
@@ -33,11 +33,17 @@ export async function POST(req: NextRequest) {
       return CommonResponse(401, 'Invalid password');
     }
 
-    return CommonResponse(200, {
+    const result = {
       email: email,
       accessToken: generateAccess(user.id),
       refreshToken: generateRefresh(user.id),
-    });
+    }
+
+    const response = NextResponse.json({data: result}, {status: 200})
+    response.cookies.set("access", result.accessToken, { httpOnly: true });
+    response.cookies.set("refresh", result.refreshToken, { httpOnly: true });
+
+    return response
   } catch (e) {
     console.error(e);
     return CommonResponse(500);

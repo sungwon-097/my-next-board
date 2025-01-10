@@ -1,5 +1,4 @@
 import {NextRequest} from 'next/server';
-import {authenticate} from '@/middleware/authenticate';
 import {CommonResponse} from '@/app/api/dto/response';
 
 /**
@@ -9,7 +8,6 @@ import {CommonResponse} from '@/app/api/dto/response';
  */
 async function Test({ req, userId }: { req: NextRequest; userId: number }) {
   try {
-    // const userId = verify(req.headers.get('authorization') as string);
     return CommonResponse(200, { user: userId });
   } catch (e) {
     console.error(e);
@@ -17,4 +15,4 @@ async function Test({ req, userId }: { req: NextRequest; userId: number }) {
   }
 }
 
-export const GET = authenticate(Test);
+export const GET = Test;

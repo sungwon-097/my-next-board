@@ -3,8 +3,8 @@ export type Article = {
   title: string;
   content: string;
   createdAt: Date;
-  preview: string;
-  user: User[];
+  preview?: string;
+  user?: User;
 };
 
 export type Comment = {
@@ -19,5 +19,6 @@ export type Comment = {
 export type User = {
   id: number;
   name: string;
-  email: string;
+  email?: string;
+  password?:string;
 };
