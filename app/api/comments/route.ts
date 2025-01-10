@@ -1,9 +1,9 @@
 import { NextRequest } from 'next/server';
-import { authenticate } from '@/middleware/authenticate';
+import { middleware } from '@/middleware';
 import prisma from '@/lib/prisma';
 import { CommonResponse } from '@/app/api/dto/response';
 
-export const POST = authenticate(registerCommentAPI);
+export const POST = middleware(registerCommentAPI);
 
 async function registerCommentAPI({
   req,

@@ -1,9 +1,8 @@
 import { NextRequest } from 'next/server';
-import { authenticate } from '@/middleware/authenticate';
 import prisma from '@/lib/prisma';
 import { CommonResponse } from '@/app/api/dto/response';
 
-export const GET = authenticate(GetArticle);
+export const GET = GetArticle;
 
 async function GetArticle({
   req,
@@ -28,7 +27,7 @@ export function findArticleById(id: number) {
           user: true,
         },
       },
-      user: true
+      user: true,
     },
   });
 }

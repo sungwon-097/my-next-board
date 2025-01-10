@@ -1,9 +1,9 @@
 import { NextRequest } from 'next/server';
-import { authenticate } from '@/middleware/authenticate';
 import prisma from '@/lib/prisma';
 import { CommonResponse } from '@/app/api/dto/response';
+import { Article } from '@/app/api/dto/models/models';
 
-export const GET = authenticate(GetArticle);
+export const GET = GetArticle;
 
 async function GetArticle({
   req,
@@ -12,11 +12,20 @@ async function GetArticle({
   req: NextRequest;
   userId: number;
 }) {
-  const articles = await prisma.post.findMany({
-    include: {
-      user: true,
-    },
-  });
+  const articles = findAllArticles();
 
   return CommonResponse(200, articles);
+}
+
+export async function findAllArticles(): Promise<Article[]> {
+  return await prisma.post.findMany({
+    include: {
+      user: {
+        select: {
+          id: true,
+          name: true,
+        },
+      },
+    },
+  });
 }

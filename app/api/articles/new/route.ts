@@ -1,9 +1,8 @@
 import { NextRequest } from 'next/server';
-import { authenticate } from '@/middleware/authenticate';
 import prisma from '@/lib/prisma';
 import { CommonResponse } from '@/app/api/dto/response';
 
-export const POST = authenticate(CreateArticle);
+export const POST = CreateArticle;
 
 async function CreateArticle({
   req,
